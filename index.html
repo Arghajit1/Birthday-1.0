@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Surprise</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Page 1 - Birthday Surprise -->
+  <div class="page active" id="page1">
+    <div class="stars"></div>
+    <div class="floating-hearts"></div>
+    
+    <div class="container">
+      <h3 class="glow">Happy Birthday My Love! 💕✨</h3>
+      <div class="subtitle">
+        To the most amazing woman in my life
+      </div>
+      <div class="love-message">
+        "Every moment with you is a gift, and today we celebrate the greatest gift of all - YOU! 🌹"
+      </div>
+      <button class="button" id="beginSurpriseBtn">
+        Begin Your Surprise! 💖
+      </button>
+    </div>
+  </div>
+
+  <!-- Page 2 - Mirror of Memories (hidden initially) -->
+  <div class="page" id="page2">
+    <div class="heart heart1">♥</div>
+    <div class="heart heart2">♥</div>
+    <div class="heart heart3">♥</div>
+    <div class="heart heart4">♥</div>
+    
+    <div class="header">
+      <h1>Mirror of Memories</h1>
+      <div class="music-control">
+        <div class="music-icon" id="musicIcon">♪</div>
+        <button class="music-toggle off" id="musicToggle">OFF</button>
+      </div>
+    </div>
+    
+    <div class="main-content">
+      <div class="unlock-container" id="unlockContainer">
+        <div class="unlock-hearts">
+          <span>♥</span>
+          <span>♥</span>
+        </div>
+        <div class="unlock-text">
+          Click to unlock memories
+        </div>
+      </div>
+
+      <div class="gallery-container" id="galleryContainer">
+        <div class="image-viewer">
+          <div class="image-card active" id="image1">
+            <img src="img1.jpg" alt="Memory 1" />
+            <div class="image-caption">This smile... my forever favorite</div>
+            <button class="download-btn">
+              💾 Download this memory
+            </button>
+          </div>
+
+          <div class="image-card" id="image2">
+            <img src="img2.jpg" alt="Memory 2" />
+            <div class="image-caption">Sunrise adventures together</div>
+            <button class="download-btn">
+              💾 Download this memory
+            </button>
+          </div>
+
+          <div class="image-card" id="image3">
+            <img src="img3.jpg" alt="Memory 3" />
+            <div class="image-caption">Love at first sight</div>
+            <button class="download-btn">
+              💾 Download this memory
+            </button>
+          </div>
+
+          <div class="image-card" id="image4">
+            <img src="img4.jpg" alt="Memory 4" />
+            <div class="image-caption">Celebration moments</div>
+            <button class="download-btn">
+              💾 Download this memory
+            </button>
+          </div>
+
+          <div class="navigation-controls">
+            <button class="nav-btn" id="prevBtn">←</button>
+            <div class="image-counter">
+              <span id="currentImage">1</span> / <span id="totalImages">4</span>
+            </div>
+            <button class="nav-btn" id="nextBtn">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <button class="next-page-btn" id="nextPageBtn" disabled style="display:none;">Next Page ➜</button>
+  </div>
+
+<!-- Page 3 - Cake -->
+  <div class="page" id="page3">
+    <div class="title">Let's Cut the Cake! 🎂</div>
+    
+    <div class="music-control">
+      <div class="music-icon" id="musicIconPage3">♪</div>
+      <button class="music-toggle off" id="musicTogglePage3">OFF</button>
+    </div>
+
+    <button class="next-btn" onclick="nextPage()">Next Page →</button>
+    
+    <div class="cake-container" id="cakeContainer">
+      <div class="cake">
+        <div class="cake-layer layer-3">
+          <div class="frosting"></div>
+          <div class="frosting"></div>
+          <div class="frosting"></div>
+          <div class="frosting"></div>
+          <div class="candle" id="candle">
+            <div class="flame"></div>
+          </div>
+        </div>
+        <div class="cake-layer layer-2">
+          <div class="frosting"></div>
+          <div class="frosting"></div>
+          <div class="frosting"></div>
+          <div class="frosting"></div>
+          <div class="frosting"></div>
+        </div>
+        <div class="cake-layer layer-1">
+          <div class="frosting"></div>
+          <div class="frosting"></div>
+          <div class="frosting"></div>
+          <div class="frosting"></div>
+          <div class="frosting"></div>
+          <div class="frosting"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="celebration-message" id="message">🎉 Make a wish! 🎉</div>
+  </div>
+
+<!-- Page 4 - Light Up -->
+  <div class="page dark-mode" id="page4" style="display: none;">
+    <div class="title">Light Up My Life</div>
+    <button class="button" onclick="turnLightsOn(event)">Turn on light</button>
+    
+    <div class="nav-buttons">
+      <!-- Removed Next Page button as per request -->
+    </div>
+    <div class="music-control">
+      <div class="music-icon" id="musicIconPage4">♪</div>
+      <button class="music-toggle off" id="musicTogglePage4">OFF</button>
+    </div>
+    <!-- Removed previous page button as per user request -->
+  </div>
+
+<!-- Page 5 - Letter -->
+  <div class="page" id="page5" style="display: none;">
+    <div class="music-control">
+      <div class="music-icon" id="musicIconPage5">♪</div>
+      <button class="music-toggle off" id="musicTogglePage5">OFF</button>
+    </div>
+    <!-- Removed previous page button as per user request -->
+    <div class="floating-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+
+    <div class="title-container">
+      <div class="main-title">
+        🎉 Happy Birthday Madam Ji 🎉
+
+    <div class="card-container">
+      <div class="card">
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        
+        <div class="greeting">Dear Madam Ji,</div>
+        
+        <div class="message">
+          <p>On this special day, I want to take a moment to celebrate not just your birthday, but the incredible person you are. Your presence lights up every room you enter, just like how you've lit up our lives.</p>
+          
+          <p>Your kindness, wisdom, and beautiful spirit inspire everyone around you. You have this magical way of making ordinary moments feel extraordinary, and today is all about celebrating the magic that is uniquely you.</p>
+          
+  <audio id="bgMusic" src="your-music.mp3" loop></audio>
+
+  <div class="signature">With all my love, Your Secret Admirer 💖</div>
+</div> <!-- close card -->
+</div> <!-- close card-container -->
+</div> <!-- close title-container -->
+
+<script src="script.js"></script>
+</body>
+</html>
